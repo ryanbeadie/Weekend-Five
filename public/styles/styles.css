@@ -1,0 +1,22 @@
+input {
+  align : center;
+  border: solid 2px;
+}
+.jumbotron {
+  text-align: center;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+div{
+  padding 2px;
+  margin: 5px;
+}
+
+h4{
+  margin:0px;
+  padding: 0px
+}
+.container {
+  margin:auto;
+}
