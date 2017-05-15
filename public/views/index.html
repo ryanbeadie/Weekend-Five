@@ -23,7 +23,7 @@
       <button class='btn' ng-click='ic.showFavs()' >Favorites </button>
 
       <div class="container row">
-        <div ng-repeat='data in ic.items' class="col-sm-4" >
+        <div ng-repeat='data in ic.items' class="col-sm-5" >
 
               <h4>{{data.Title}}<h4>
               <img ng-src="{{data.Poster}}">
@@ -31,9 +31,9 @@
               <button ng-click='ic.addFavoriteMovie(data.Title , data.Poster , data.Year)' >Add To Favs</button>
         </div>
         <div class="container row">
-          <div ng-repeat='data in ic.favs' class="col-sm-4" >
+          <div ng-repeat='data in ic.favs' class="col-sm-5" >
             <h4>{{data.title}}<h4>
-            <img ng-src="{{data.poster}}">
+            <img ng-src="{{data.poster}}"height="400" width="300">
             <h4>{{data.year}}<h4>
               <button class="btn" ng-click='ic.deleteMovie(data._id)' >Delete</button>
 
