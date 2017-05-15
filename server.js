@@ -24,22 +24,20 @@ app.use(bodyParser.urlencoded( {extended: true }) );
 //port
 var port = process.env.PORT || 5000;
 
-
-
 //spin up server
 app.listen(port, function(){
-  console.log('server up on:', port);
+    console.log('server up on:', port);
 });//end server
 
 app.get('/', function(req, res){
-  res.sendFile(path.resolve('public/views/index.html') );
+    res.sendFile(path.resolve('public/views/index.html') );
 });
 
 app.post('/addFavMovie', function(req, res){
-  console.log('in POST route' , req.body);
-  var dbMovie = favoriteMovies(req.body);
-  dbMovie.save().then(function(){
-  res.sendStatus(200);
+    console.log('in POST route' , req.body);
+    var dbMovie = favoriteMovies(req.body);
+    dbMovie.save().then(function(){
+    res.sendStatus(200);
 });// end save to db
 });// end post
 

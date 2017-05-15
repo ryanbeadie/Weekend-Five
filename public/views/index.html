@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Movies</title>
-
     <script src="/vendors/angular.min.js" charset="utf-8"></script>
-
+    <!-- <script src="/vendors/angular-route.js" charset="utf-8"></script> -->
     <script src="scripts/client.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/vendors/bootstrap.css">
     <link rel="stylesheet" href="/styles/styles.css">
@@ -24,7 +23,6 @@
 
       <div class="container row">
         <div ng-repeat='data in ic.items' class="col-sm-5" >
-
               <h4>{{data.Title}}<h4>
               <img ng-src="{{data.Poster}}">
               <h4>{{data.Year}}<h4>
@@ -32,11 +30,10 @@
         </div>
         <div class="container row">
           <div ng-repeat='data in ic.favs' class="col-sm-5" >
-            <h4>{{data.title}}<h4>
-            <img ng-src="{{data.poster}}"height="400" width="300">
-            <h4>{{data.year}}<h4>
+              <h4>{{data.title}}<h4>
+              <img ng-src="{{data.poster}}"height="400" width="300">
+              <h4>{{data.year}}<h4>
               <button class="btn" ng-click='ic.deleteMovie(data._id)' >Delete</button>
-
           </div>
         </div>
       </div>
