@@ -10,7 +10,8 @@ myApp.controller( 'MovieController', function($http){
 
 //Get Movie info from OMDB
     vm.getMovieInfo = function (){
-
+      vm.items=[];
+      vm.favs = [];
       console.log('in get Movies');
       $http({
         method: 'GET',
@@ -35,6 +36,7 @@ myApp.controller( 'MovieController', function($http){
 
 
     vm.addFavoriteMovie = function (Title , Poster, Year){
+
       console.log('in addFavoriteMovie');
       var objectToSend = {
         title: Title,
@@ -53,7 +55,9 @@ myApp.controller( 'MovieController', function($http){
     };//end addFavoriteMovie
 
   vm.showFavs = function (){
-    
+    vm.items=[];
+    vm.favs = [];
+    vm.movie_name = "";
     console.log('in showFavs');
     $http({
       method: 'GET',
@@ -62,6 +66,16 @@ myApp.controller( 'MovieController', function($http){
       console.log('response.data is:', response.data);
       vm.favs = response.data;
       console.log('favs' , vm.favs);
+    });//end http
+  };//end getAssignments
+
+  vm.deleteMovie = function (id){
+    console.log('in delete Movie', id);
+    $http({
+      method: 'DELETE',
+      url: '/delete/'+ id,
+    }).then(function success(response){
+      vm.showFavs();
     });//end http
   };//end getAssignments
 

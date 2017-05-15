@@ -52,3 +52,11 @@ app.get('/getFavs', function(req, res){
     res.send(data);
     });
 });// end get
+
+
+app.delete('/delete/:id',function(req, res){
+    console.log('req.param to delete:', req.params.id);
+    favoriteMovies.remove({_id: req.params.id}).then(function(){
+    res.sendStatus(200);
+    });//end remove
+});//end app.delete
